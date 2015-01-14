@@ -143,7 +143,7 @@ class Chef
       # We could just store an array of example groups and not use RSpec.world,
       # but it may be useful later if we decide to apply our own ordering scheme
       # or use example group filters.
-      def register_control_group
+      def register_control_groups
         add_example_group_methods
         run_context.audits.each do |name, group|
           ctl_grp = RSpec::Core::ExampleGroup.__control_group__(*group.args, &group.block)
